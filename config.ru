@@ -23,7 +23,7 @@ class App < Sinatra::Base
         'Content-Type' => 'application/json; charset=UTF-8',
         'X-Line-ChannelID' => ENV["LINE_CHANNEL_ID"],
         'X-Line-ChannelSecret' => ENV["LINE_CHANNEL_SECRET"],
-        'X-Line-Trusted-User-With-ACL' => ENV["LINE_CHANNEL_MID"],
+        'X-Line-Trusted-User-With-ACL' => ENV["CHANNEL_ACCESS_TOKEN"],
       })
     end
 
