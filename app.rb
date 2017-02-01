@@ -44,11 +44,29 @@ post '/callback' do
         when 'こんにちは'
           message = {
              type: 'text',
-             text: 'Guten tag'
+             text: 'Guten Tag!'
           }
           res = client.reply_message(event['replyToken'], message)
           p res
           p res.body
+
+        when 'おはよう'
+          message = {
+             type: 'text',
+             text: 'Guten Morgen'
+          }
+          res = client.reply_message(event['replyToken'], message)
+          p res
+          p res.body
+          
+        when 'おやすみ'
+          message = {
+             type: 'text',
+             text: 'Guten Abend'
+          }
+          res = client.reply_message(event['replyToken'], message)
+          p res
+          p res.body  
 
         else
           message = {
