@@ -40,17 +40,17 @@ post '/callback' do
     when Line::Bot::Event::Message
       case event.type
       when Line::Bot::Event::MessageType::Text
-        case message
+        case event.message['text']
         when "こんにちは"
           message = {
              type: 'text',
              text: 'Guten tag'
           }
         else
-        message = {
-          type: 'text',
-          text: event.message['text']
-        }
+          message = {
+            type: 'text',
+            text: event.message['text']
+          }
         
         res = client.reply_message(event['replyToken'], message)
         p res
