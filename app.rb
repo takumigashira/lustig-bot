@@ -1,5 +1,5 @@
-require 'sinatra'   # gem 'sinatra'
-require 'line/bot'  # gem 'line-bot-api'
+require 'sinatra'
+require 'line/bot'
 
 module Line
   module Bot
@@ -40,7 +40,7 @@ post '/callback' do
     when Line::Bot::Event::Message
       case event.type
       when Line::Bot::Event::MessageType::Text
-        case event.message['text']
+        case event.message['text'] #Webhook event objectの送信されたtextを参照
         when 'こんにちは'
           message = {
              type: 'text',
