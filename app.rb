@@ -59,7 +59,7 @@ post '/callback' do
           p res
           p res.body
           
-        when 'おやすみ'
+        when 'こんばんわ'
           message = {
              type: 'text',
              text: 'Guten Abend'
@@ -68,6 +68,15 @@ post '/callback' do
           p res
           p res.body  
 
+        when 'おやすみ'
+          message = {
+             type: 'text',
+             text: 'Gute  Nacht'
+          }
+          res = client.reply_message(event['replyToken'], message)
+          p res
+          p res.body
+          
         else
           message = {
             type: 'text',
